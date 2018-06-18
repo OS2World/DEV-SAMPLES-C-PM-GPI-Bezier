@@ -1,0 +1,17 @@
+
+
+
+;-----------------------------------
+; BEZIER.DEF module definition file
+;-----------------------------------
+
+NAME           BEZIER    WINDOWAPI
+
+DESCRIPTION    '(c) 1989, Charles Petzold and Ziff Communications Co.'
+PROTMODE
+HEAPSIZE       1024
+STACKSIZE      8192
+EXPORTS        ClientWndProc
+
+
+
