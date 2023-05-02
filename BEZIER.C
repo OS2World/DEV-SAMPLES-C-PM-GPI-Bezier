@@ -1,5 +1,3 @@
-
-
 /*-------------------------------------------------------------------
    BEZIER.C -- GPI Bezier Spline Demonstration Program
                (c) 1989, Charles Petzold and Ziff Communications Co.
@@ -26,13 +24,13 @@ int main (void)
      hab = WinInitialize (0) ;
      hmq = WinCreateMsgQueue (hab, 0) ;
 
-     WinRegisterClass (hab, szClientClass, ClientWndProc, CS_SIZEREDRAW, 0) ;
+     WinRegisterClass (hab, (PCSZ) szClientClass, (PFNWP) ClientWndProc, CS_SIZEREDRAW, 0) ;
 
      hwndFrame = WinCreateStdWindow (HWND_DESKTOP, WS_VISIBLE,
-                                     &flFrameFlags, szClientClass, NULL,
-                                     0L, NULL, 0, &hwndClient) ;
+                                     &flFrameFlags, (PCSZ) szClientClass, NULL,
+                                     0L, NULLHANDLE, 0, &hwndClient) ;
 
-     while (WinGetMsg (hab, &qmsg, NULL, 0, 0))
+     while (WinGetMsg (hab, &qmsg, NULLHANDLE, 0, 0))
           WinDispatchMsg (hab, &qmsg) ;
 
      WinDestroyWindow (hwndFrame) ;
@@ -119,7 +117,7 @@ MRESULT EXPENTRY ClientWndProc (HWND hwnd, USHORT msg, MPARAM mp1, MPARAM mp2)
           case WM_BUTTON1UP:
                if (fButton1Down)
                     {
-                    WinSetCapture (HWND_DESKTOP, NULL) ;
+                    WinSetCapture (HWND_DESKTOP, NULLHANDLE) ;
                     fButton1Down = FALSE ;
                     }
                break ;
@@ -127,7 +125,7 @@ MRESULT EXPENTRY ClientWndProc (HWND hwnd, USHORT msg, MPARAM mp1, MPARAM mp2)
           case WM_BUTTON2UP:
                if (fButton2Down)
                     {
-                    WinSetCapture (HWND_DESKTOP, NULL) ;
+                    WinSetCapture (HWND_DESKTOP, NULLHANDLE) ;
                     fButton2Down = FALSE ;
                     }
                break ;
@@ -157,7 +155,7 @@ MRESULT EXPENTRY ClientWndProc (HWND hwnd, USHORT msg, MPARAM mp1, MPARAM mp2)
                break ;
 
           case WM_PAINT:
-               hps = WinBeginPaint (hwnd, NULL, NULL) ;
+               hps = WinBeginPaint (hwnd, NULLHANDLE, NULL) ;
                GpiErase (hps) ;
 
                DrawSpline (hps, &ptlEnd1, &ptlEnd2, &ptlCtl1, &ptlCtl2) ;
@@ -167,5 +165,3 @@ MRESULT EXPENTRY ClientWndProc (HWND hwnd, USHORT msg, MPARAM mp1, MPARAM mp2)
           }
      return WinDefWindowProc (hwnd, msg, mp1, mp2) ;
      }
-
-
