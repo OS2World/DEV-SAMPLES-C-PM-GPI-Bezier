@@ -4,7 +4,7 @@
 
 NAME           BEZIER    WINDOWAPI
 
-DESCRIPTION    '(c) 1989, Charles Petzold and Ziff Communications Co.'
+DESCRIPTION    '@#OS2World:1.01#@##1## 29 Apr 2023 20:00:00     ARCAOS-507::::::v1.01@@GPI Bezier Spline Demo PM Application.'
 
 STACKSIZE      8192
 EXPORTS        ClientWndProc
