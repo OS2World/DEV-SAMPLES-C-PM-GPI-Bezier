@@ -1,4 +1,4 @@
-# DEV-SAMPLES-GPI-Bezier
+# DEV-SAMPLES-C-GPI-Bezier
 GPI Bezier Spline Demonstration Program, Charles Petzold and Ziff Communications Co. PC Magazine, Volume 8, Number 19
 
 LICENSE
