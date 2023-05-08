@@ -7,10 +7,11 @@ LICENSE
 
 COMPILE TOOLS
 ===============
-* 
+* yum install git gcc make libc-devel binutils watcom-wrc watcom-wlink-hll
  
 AUTHORS
 ===============
+* Martin Iturbide (2023)
 * Charles Petzold and Ziff Communications Co.
 
 LINKS
